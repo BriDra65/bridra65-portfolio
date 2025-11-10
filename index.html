@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BriDra Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png.jpg">
+</head>
+<body>
+
+  <header class="fade-glow">
+    <img src="images/logo.png" alt="BriDra Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="fade-glow">
+      <h1 class="fade-in">Welcome to <span class="neon-hover">BriDra</span> Portfolio</h1>
+      <p>デジタルデザインを通じて、心を動かすビジュアルを。</p>
+    </section>
+
+    <section id="works" class="fade-glow">
+      <h2>Works</h2>
+      <div class="grid">
+        <a href="works/spring day/spring-day.html" class="work-item">
+          <img src="images/spring-banner.jpg" alt="Spring Day">
+          <p>Spring Day Campaign</p>
+        </a>
+        <a href="works/xmas/xmas.html" class="work-item">
+          <img src="images/xmas-banner.jpg" alt="Xmas Seal 2025">
+          <p>Xmas Seal 2025</p>
+        </a>
+        <a href="works/newyear/newyear-lottery.html" class="work-item">
+          <img src="images/newyear-lottery.jpg" alt="New Year Lottery">
+          <p>New Year Lottery</p>
+        </a>
+        <a href="works/nailsalon/nailsalon-course.html" class="work-item">
+          <img src="images/nailsalon-course.jpg" alt="Gel Nail Course">
+          <p>Gel Nail Course</p>
+        </a>
+        <a href="works/careerlink/careerlink.html" class="work-item">
+          <img src="images/careerlink-banner.jpg" alt="資格応援キャンペーン">
+          <p>Shikaku Support Campaign<br><span>資格応援キャンペーン</span></p>
+        </a>
+      </div>
+    </section>
+    <section id="contact" class="fade-glow">
+  <h2>Contact</h2>
+  <form id="contact-form" action="https://formspree.io/f/xvgdpnow" method="POST">
+    <label>
+      お名前<br>
+      <input type="text" name="name" required>
+    </label>
+    <br>
+    <label>
+      メールアドレス<br>
+      <input type="email" name="email" required>
+    </label>
+    <br>
+    <label>
+      メッセージ<br>
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+    <br>
+    <button type="submit">送信</button>
+    <p>ご依頼・お問い合わせは <a href="mailto:brilliant.dragon@outlook.jp">brilliant.dragon@outlook.jp</a> まで。</p>
+  </form>
+
+  <!-- 送信完了メッセージ -->
+  <p id="thank-you" style="display:none; color:#00e0ff; margin-top:20px;">
+    ✨ メッセージを送信しました！ありがとうございます！
+  </p>
+</section>
+  </main>
+
+  <footer>
+    <p>© 2025 BriDra. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
+<script>
+  const form = document.getElementById("contact-form");
+  const thankYou = document.getElementById("thank-you");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // ページリロード防止
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+
+    if (response.ok) {
+      form.reset();
+      thankYou.style.display = "block";
+      thankYou.style.animation = "fadeIn 1s ease-out forwards";
+    } else {
+      alert("送信に失敗しました。もう一度お試しください。");
+    }
+  });
+
+  // フェードイン効果
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);
+</script>

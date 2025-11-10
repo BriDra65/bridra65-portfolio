@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.logo {
+  width: 140px;
+  filter: drop-shadow(0 0 10px #00aaff80);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00aaff;
+  text-shadow: 0 0 8px #00aaff;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.work-item {
+  text-align: center;
+  transition: 0.3s;
+}
+
+.work-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.work-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00aaff80;
+}
+
+.work-item p:hover {
+  color: #00e0ff;
+  text-shadow: 0 0 6px #00e0ff, 0 0 12px #00e0ff;
+  transform: scale(1.05);
+}
+
+.work-item:hover img {
+  box-shadow: 0 0 15px #00e0ff;
+  transform: scale(1.02);
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* フェードイン＋白い光が浮かぶように */
+.fade-glow {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: glowFade 1s ease forwards;
+}
+
+@keyframes glowFade {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  nav ul {
+    gap: 20px;
+  }
+  main {
+    padding: 40px 10px;
+  }
+}
+
+/* -------------------------------
+   ✨ フェードインアニメーション（白い光が浮かぶ）
+--------------------------------- */
+.fade-in {
+  opacity: 0;
+  animation: fadeLight 1.8s ease-out forwards;
+}
+
+@keyframes fadeLight {
+  0% {
+    opacity: 0;
+    filter: brightness(2) blur(6px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(3) blur(3px);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) blur(0);
+  }
+}
+
+/* -------------------------------
+   🪩 ホバー時のネオン発光（アクセントカラー）
+--------------------------------- */
+.neon-hover {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.neon-hover:hover {
+  color: #00aaff; /* ネオンブルー（他に #b84bff や #ff4bf0 も合う！） */
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+/* -------------------------------
+   🌙 全体のベース（ロゴと合わせたダークテーマ）
+--------------------------------- */
+body {
+  background: radial-gradient(circle at top left, #0a0a0a, #000);
+  color: #e0e0e0;
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* -------------------------------
+   🧭 ロゴやヘッダー周り
+--------------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+header img {
+  width: 160px;
+  animation: fadeLight 2s ease-out;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00aaff;
+  text-shadow: 0 0 10px #00aaff;
+}
+
+/* -------------------------------
+   🖼️ 作品カード（worksセクション）
+--------------------------------- */
+.work-card {
+  width: 300px;
+  margin: 20px;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  transition: 0.4s;
+}
+
+.work-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00aaff88;
+}
+
+.work-card img {
+  width: 100%;
+  display: block;
+}
+
+.work-card h3 {
+  padding: 16px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* ============ 個別作品ページ ============ */
+
+.sub-header {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.sub-header h1 {
+  font-size: 1.8rem;
+  color: #00e0ff;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #00e0ff;
+}
+
+.work-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #e0e0e0;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
+}
+
+.work-info h2 {
+  color: #00e0ff;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  text-shadow: 0 0 6px #00e0ff;
+}
+
+.work-info p {
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.work-info ul {
+  list-style: square inside;
+  color: #ccc;
+  padding-left: 10px;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  color: #00e0ff;
+  border: 1px solid #00e0ff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.back-button:hover {
+  background: #00e0ff;
+  color: #000;
+  box-shadow: 0 0 10px #00e0ff;
+}
+
+.back-button.bottom {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* ===================================
+   🌌 BriDra Portfolio Refined Style
+   — 上品 × ネオン × 落ち着き —
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+  background: radial-gradient(circle at top left, #0c0c0c, #000);
+  color: #eaeaea;
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* -------------------------------
+   🧭 Header
+-------------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+  animation: fadeLight 1.5s ease;
+}
+
+.logo {
+  width: 140px;
+  filter: drop-shadow(0 0 10px #00aaff80);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #00e0ff;
+  text-shadow: 0 0 8px #00e0ff;
+}
+
+/* -------------------------------
+   🏠 About
+-------------------------------- */
+#about {
+  text-align: center;
+  margin-top: 100px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+#about p {
+  color: #bbb;
+  font-size: 1rem;
+}
+
+/* -------------------------------
+   🎨 Works
+-------------------------------- */
+#works {
+  margin-top: 120px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #00e0ff;
+  text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.work-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0);
+}
+
+.work-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.3);
+}
+
+.work-item img {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.5s ease;
+}
+
+.work-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+.work-item p {
+  color: #e0e0e0;
+  font-weight: 500;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.work-item:hover p {
+  color: #00e0ff;
+  text-shadow: 0 0 10px #00e0ff;
+}
+
+/* -------------------------------
+   ✉️ Contact
+-------------------------------- */
+#contact {
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 80px;
+}
+
+#contact a {
+  color: #00e0ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#contact a:hover {
+  text-shadow: 0 0 8px #00e0ff;
+}
+
+/* -------------------------------
+   ⚡ Animation
+-------------------------------- */
+.fade-glow {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLight {
+  0% { opacity: 0; filter: brightness(2) blur(6px); }
+  100% { opacity: 1; filter: brightness(1) blur(0); }
+}
+
+/* -------------------------------
+   📱 Responsive
+-------------------------------- */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .grid {
+    gap: 25px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#contact input, 
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 0 5px #00e0ff40;
+}
+
+#contact button {
+  background: #00e0ff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contact button:hover {
+  box-shadow: 0 0 10px #00e0ff;
+  transform: scale(1.05);
+}

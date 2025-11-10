@@ -1,0 +1,74 @@
+/* 背景：柔らかい金×赤 */
+body {
+  background: linear-gradient(180deg, #fff8e1 0%, #ffe4e1 100%);
+  color: #443;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+/* タイトル */
+h1 {
+  text-align: right;
+  padding: 100px 80px 40px 0;
+  color: #d62828; /* 鮮やかな紅色 */
+  text-shadow: 0 0 12px rgba(200, 80, 50, 0.5);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #b91c1c;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* セクションタイトル */
+h2 {
+  color: #c62828;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+/* テキストボックス */
+.text-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px 25px;
+  margin: 0 auto 50px auto;
+  width: 75%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(200, 80, 50, 0.1);
+}
+
+/* 本文 */
+p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 戻るボタン */
+.back-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #f6b73c, #f1a208);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255, 200, 80, 0.4);
+}
+.back-button:hover {
+  background: linear-gradient(90deg, #f1a208, #f6b73c);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 200, 80, 0.6);
+}
+
+/* 使用ツールリスト */
+ul li {
+  list-style-type: "🎍 ";
+  margin-left: 40px;
+  color: #555;
+}

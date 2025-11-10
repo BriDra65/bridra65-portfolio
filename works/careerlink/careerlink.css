@@ -1,0 +1,71 @@
+/* やさしいグリーン基調 */
+body {
+  background-color: #eefaf2; /* 柔らかいミントグリーン */
+  color: #444;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+/* タイトル */
+h1 {
+  text-align: right;
+  padding: 100px 80px 40px 0;
+  color: #4cb58a; /* メインの落ち着いたグリーン */
+  text-shadow: 0 0 12px rgba(76, 181, 138, 0.4);
+}
+.subtitle {
+  font-size: 1.2rem;
+  color: #3f8f6e;
+  text-shadow: 0 0 10px rgba(63, 143, 110, 0.3);
+}
+
+/* セクションタイトル */
+h2 {
+  color: #3fa57a;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 6px rgba(63, 165, 122, 0.3);
+}
+
+/* テキストボックス */
+.text-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 25px;
+  margin: 0 auto 50px auto;
+  width: 75%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* テキスト */
+p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 戻るボタン */
+.back-button {
+  display: inline-block;
+  background-color: #aadbbd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+.back-button:hover {
+  background-color: #93c9a9;
+  transform: translateY(-2px);
+}
+
+/* 使用ツール */
+ul li {
+  list-style-type: "🌿 ";
+  margin-left: 40px;
+  color: #555;
+}

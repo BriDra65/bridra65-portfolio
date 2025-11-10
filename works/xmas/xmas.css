@@ -1,0 +1,108 @@
+/* あたたかい赤系の背景 */
+body {
+  background-color: #fff5f5; /* 柔らかいピンクレッド */
+  color: #443;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+/* タイトル */
+h1 {
+  text-align: right;
+  padding: 100px 80px 40px 0;
+  color: #b43b3b; /* 深めのボルドーレッド */
+  text-shadow: 0 0 15px rgba(180, 59, 59, 0.5);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #a02c2c;
+  text-shadow: 0 0 8px rgba(255, 190, 150, 0.6);
+}
+
+/* セクションタイトル */
+h2 {
+  color: #c0392b;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255, 200, 150, 0.4);
+}
+
+/* テキストボックス */
+.text-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 25px;
+  margin: 0 auto 50px auto;
+  width: 75%;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(120, 40, 40, 0.1);
+}
+
+/* 本文 */
+p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 戻るボタン */
+.back-button {
+  display: inline-block;
+  background-color: #e26a6a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+.back-button:hover {
+  background-color: #d94f4f;
+  transform: translateY(-2px);
+}
+
+/* 使用ツール */
+ul li {
+  list-style-type: "🎄 ";
+  margin-left: 40px;
+  color: #555;
+}
+
+/* セクションの背景にコントラストをつける */
+section:nth-of-type(odd) {
+  background-color: #ffe0e0; /* ほんのり濃いピンク */
+  padding: 60px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 180, 180, 0.3); /* やわらか光 */
+}
+
+section:nth-of-type(even) {
+  background-color: #fff5f5; /* 明るめで軽やか */
+  padding: 60px 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(255, 200, 200, 0.25);
+}
+
+/* タイトルにゴールドっぽい光の余韻 */
+h2 {
+  color: #b22222; /* 深いボルドー */
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 215, 150, 0.5); /* ゴールドの光 */
+}
+
+/* バナー画像をふんわり浮かせる */
+.banner img {
+  display: block;
+  margin: 0 auto 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(200, 0, 0, 0.2); /* ふんわり立体感 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banner img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(200, 0, 0, 0.3);
+}

@@ -1,0 +1,83 @@
+/* 背景：淡いピンクベージュ */
+body {
+  background: linear-gradient(180deg, #fff9f9 0%, #ffeef1 100%);
+  color: #555;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.9;
+  margin: 0;
+  padding: 0;
+}
+
+/* タイトル */
+h1 {
+  text-align: right;
+  padding: 100px 80px 40px 0;
+  color: #e89cae; /* 落ち着いたローズピンク */
+  text-shadow: 0 0 12px rgba(232, 156, 174, 0.4);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #d37d92;
+  text-shadow: 0 0 10px rgba(255, 200, 210, 0.4);
+}
+
+/* セクションタイトル */
+h2 {
+  color: #d87c95;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px rgba(232, 156, 174, 0.3);
+}
+
+/* テキストボックス */
+.text-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 25px;
+  margin: 0 auto 50px auto;
+  width: 75%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(230, 170, 180, 0.15);
+}
+
+/* 本文 */
+p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* 戻るボタン */
+.back-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #e89cae, #f4c6d1);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(240, 190, 200, 0.4);
+}
+.back-button:hover {
+  background: linear-gradient(90deg, #f4c6d1, #e89cae);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(240, 190, 200, 0.6);
+}
+
+/* 使用ツールリスト */
+ul li {
+  list-style-type: "💅 ";
+  margin-left: 40px;
+  color: #555;
+}
+
+.detail-image {
+  display: block;
+  margin: 40px auto; /* 上下に余白＋左右中央寄せ */
+  width: 80%; /* 画像サイズを調整（お好みで70〜90%くらい） */
+  max-width: 800px; /* 大きくなりすぎないよう制限 */
+  border-radius: 10px; /* 柔らかい印象をプラス */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ふんわり影 */
+}
