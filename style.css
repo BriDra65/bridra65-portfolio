@@ -612,3 +612,9 @@ h2 {
     background-position: center top;
   }
 }
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background: url('/bridra65-portfolio/images/spring-banner.jpg') center/cover no-repeat;
+}
