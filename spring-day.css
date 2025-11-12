@@ -77,20 +77,26 @@ ul li {
   margin-left: 40px;
 }
 
-/* 🌸 春の光バナー：画面内にちょうど収まるように */
+/* 🌸 春の光バナー - PC・スマホどちらでも画面内に収まるように調整 */
 .banner {
+  display: block;
   width: 100%;
-  max-width: 100%;
-  height: auto; /* ← 高さを固定せず、画像比率で自動調整 */
-  aspect-ratio: 16 / 9; /* ← 元の画像の比率に合わせる（必要に応じて調整） */
-  background: url('../../images/spring-banner.jpg') center center / contain no-repeat;
+  height: auto;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* 画像全体を切らずに収める */
+  max-height: 80vh; /* 画面の8割以内に制限（調整OK） */
   margin: 0 auto;
 }
 
-/* 📱 スマホ用：縦長画面ではもう少しフィットさせる */
+/* 📱 スマホ用：よりフィットさせる */
 @media screen and (max-width: 768px) {
-  .banner {
-    aspect-ratio: 3 / 4; /* ← スマホで見やすい比率に変更 */
-    background-position: center top;
+  .banner img {
+    max-height: 60vh; /* スマホは縦長なのでさらにコンパクトに */
+    object-fit: contain;
   }
 }
