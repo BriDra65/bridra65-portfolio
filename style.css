@@ -563,40 +563,61 @@ h2 {
   border-radius: 10px;
 }
 
-/* 🌸 スマホ時にバナー画像を画面にフィットさせる */
-@media screen and (max-width: 768px) {
-  .detail-image {
-    width: 100%;
-    height: auto;
-    max-height: 60vh; /* 画面の60%以内に収める */
-    object-fit: cover;
-  }
+/* =============================
+   🖤 共通ヘッダー（黒シアー＋ぼかし）
+============================= */
+header {
+  position: sticky !important;
+  top: 0 !important;
+  background: rgba(0, 0, 0, 0.65) !important; /* 黒の半透明 */
+  backdrop-filter: blur(10px) !important; /* ぼかし効果 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  z-index: 1000 !important;
+  padding: 18px 60px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
-/* 🌸 スマホ画面でバナー画像が画面に収まるように調整 */
-@media screen and (max-width: 768px) {
-  .work-item img {
-    width: 100%;
-    height: auto;
-    max-height: 60vh; /* 画面の60%以内に制限 */
-    object-fit: cover;
-  }
+/* =============================
+   🌸 フッター中央ボタン（共通）
+============================= */
+.back-button.bottom {
+  display: block;
+  text-align: center;
+  margin: 60px auto 40px;
+  padding: 14px 60px;
+  font-size: 1.1rem;
+  background-color: #ffb6c1;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  border: none;
 }
 
-.banner {
-  width: 100%;
-  height: 80vh; /* ← ここで全体の高さを調整（画面の80%くらい） */
-  background: url('../../images/spring-banner.jpg') center/cover no-repeat;
-  background-position: center top; /* ← 上を少し優先して見せる */
-  overflow: hidden;
+footer {
+  text-align: center;
+  padding: 60px 0 30px;
 }
 
-/* 📱 スマホではもう少し小さめに */
-@media screen and (max-width: 768px) {
-  .banner {
-    height: 60vh; /* スマホは縦長なので少し小さく */
-    background-position: center top;
-  }
+.back-button.bottom {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 60px;
+  font-size: 1.1rem;
+  background-color: #ffb6c1;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  border: none;
 }
 
-
+.back-button.bottom:hover {
+  background-color: #ff9bb0;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 155, 176, 0.6);
+}

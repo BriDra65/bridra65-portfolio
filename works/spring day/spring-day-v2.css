@@ -1,0 +1,146 @@
+/* 全体背景 */
+body {
+  background-color: #ffeef2; /* 優しいピンク */
+  color: #555;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.9;
+  margin: 0;
+  padding: 0;
+}
+
+/* セクションタイトル（Project Overview / Design Conceptなど） */
+h2 {
+  color: #00bcd4; /* 明るいブルーで統一 */
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+}
+
+/* 説明テキストを包むボックス */
+.text-box {
+  background-color: rgba(255, 255, 255, 0.9); /* 白に近い半透明 */
+  padding: 20px 25px;
+  margin: 0 auto 50px auto;
+  width: 75%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* テキスト本体 */
+p {
+  color: #444; /* 少し濃いめグレーで可読性UP */
+  font-size: 1rem;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.4); /* 柔らかい光の反射感 */
+}
+
+/* ヘッダーのタイトル部分 */
+h1 {
+  text-align: right;
+  margin: 0;
+  padding: 100px 80px 40px 0;
+  color: #00bcd4;
+  text-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+}
+
+/* サブタイトル（日本語の「春の光を、あなたと。」） */
+.subtitle {
+  text-align: right;
+  margin-right: 80px;
+  font-size: 1.2rem;
+  color: #0097a7;
+  text-shadow: 0 0 10px rgba(0, 151, 167, 0.4);
+}
+
+/* 戻るボタン */
+.back-button {
+  display: inline-block;
+  background-color: #ffb6c1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: #ff9bb0;
+  transform: translateY(-2px);
+}
+
+/* Adobe Photoshopアイコンっぽく調整 */
+ul li {
+  list-style-type: "🌸 ";
+  color: #555;
+  margin-left: 40px;
+}
+
+/* 春の光バナーを完全レスポンシブで表示 */
+.spring-day .detail-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;      /* 横幅に追従する */
+  max-height: none;     /* 高さ制限を解除 */
+  object-fit: scale-down;  /* トリミングなしで全体表示 */
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* 画面が広いときも中央寄せで安定 */
+.work-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* スマホでも自然に縮む */
+@media (max-width: 768px) {
+  .spring-day .detail-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* =============================
+   🌸 Spring Day override (明るい背景を最優先)
+============================= */
+body.spring-day {
+  background: #ffeef2 !important; /* 優しいピンク */
+  color: #555 !important;
+}
+
+/* コンテンツ内の文字色や背景も上書き */
+.spring-day .text-box {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #444 !important;
+}
+
+.spring-day h2 {
+  color: #00bcd4 !important;
+  text-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+}
+
+.spring-day p {
+  color: #444 !important;
+}
+
+/* 🌸 Spring Day 専用ヘッダー修正 */
+body.spring-day header {
+  display: flex;
+  justify-content: flex-start; /* 左寄せに統一 */
+  align-items: center;
+  gap: 40px; /* ボタンとタイトルの間に余白 */
+  flex-wrap: nowrap; /* 改行しない！ */
+  padding: 18px 60px;
+}
+
+/* Backボタンの幅を少し抑える */
+body.spring-day .back-button {
+  white-space: nowrap; /* 改行禁止 */
+  padding: 12px 40px;
+  font-size: 1rem;
+}

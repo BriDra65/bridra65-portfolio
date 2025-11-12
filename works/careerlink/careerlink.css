@@ -69,3 +69,64 @@ ul li {
   margin-left: 40px;
   color: #555;
 }
+
+/* =============================
+🎓 Shikaku Support Campaign 統一デザイン調整
+============================= */
+
+/* ① バナー画像 */
+body.calm-theme .detail-image,
+body.calm-theme main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* ② 黒シアーヘッダー（共通仕様） */
+body.calm-theme header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ③ フッター中央ボタン */
+body.calm-theme footer {
+  text-align: center;
+  background-color: #e8f6f2; /* ミント寄りの淡グリーン */
+  padding: 60px 0 30px;
+  border-top: none;
+  box-shadow: none;
+}
+
+body.calm-theme .back-button.bottom {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 60px;
+  font-size: 1.1rem;
+  background-color: #80c9aa; /* 明るいミントグリーン */
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  border: none;
+  margin-top: 40px;
+}
+
+body.calm-theme .back-button.bottom:hover {
+  background-color: #64b497;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(120, 210, 180, 0.5);
+}

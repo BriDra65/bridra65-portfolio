@@ -81,3 +81,64 @@ ul li {
   border-radius: 10px; /* 柔らかい印象をプラス */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ふんわり影 */
 }
+
+/* =============================
+💅 Nail Salon Course ページ統一デザイン調整
+============================= */
+
+/* ① バナー画像を横幅に合わせて調整 */
+body.nail-theme .detail-image,
+body.nail-theme main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* ② 黒シアーヘッダー（統一版） */
+body.nail-theme header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ③ フッター中央ボタン */
+body.nail-theme footer {
+  text-align: center;
+  background-color: #fff5f7; /* 淡いピンク調 */
+  padding: 60px 0 30px;
+  border-top: none;
+  box-shadow: none;
+}
+
+body.nail-theme .back-button.bottom {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 60px;
+  font-size: 1.1rem;
+  background-color: #ffb6c1; /* ローズピンク */
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  border: none;
+  margin-top: 40px;
+}
+
+body.nail-theme .back-button.bottom:hover {
+  background-color: #ff91a4;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 170, 190, 0.5);
+}
