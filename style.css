@@ -562,3 +562,13 @@ h2 {
   object-fit: cover;
   border-radius: 10px;
 }
+
+/* 🌸 スマホ時にバナー画像を画面にフィットさせる */
+@media screen and (max-width: 768px) {
+  .detail-image {
+    width: 100%;
+    height: auto;
+    max-height: 60vh; /* 画面の60%以内に収める */
+    object-fit: cover;
+  }
+}
