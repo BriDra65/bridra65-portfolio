@@ -465,3 +465,35 @@ body.xmas footer {
     font-size: 0.9rem;
   }
 }
+
+/* 📱 ヘッダーの高さ調整（スマホサイズ） */
+@media screen and (max-width: 768px) {
+  header.sub-header {
+    background-color: rgba(0, 0, 0, 0.6); /* 黒シアーを薄めに */
+    padding: 8px 16px; /* 高さを小さく */
+    min-height: 60px; /* 最低限の高さ */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Backボタン */
+  .back-button {
+    padding: 6px 18px;
+    font-size: 0.85rem;
+  }
+
+  /* タイトルまわり */
+  .warm-title,
+  .spring-title,
+  .nail-title,
+  .calm-title {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+}
