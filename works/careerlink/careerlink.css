@@ -189,3 +189,14 @@ body.calm-theme .back-button.bottom:hover {
     margin-top: 4px;
   }
 }
+
+@media (max-width: 480px) {
+  body.calm-theme h1.calm-title {
+    font-size: clamp(26px, 7vw, 34px);
+    padding: 24px 16px 10px 0;
+  }
+  body.calm-theme .subtitle {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}

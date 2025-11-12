@@ -497,3 +497,16 @@ body.xmas footer {
     margin-top: 4px;
   }
 }
+
+@media (max-width: 480px) {
+  body.xmas h1.warm-title {
+    font-size: clamp(26px, 7vw, 34px);
+    padding: 24px 16px 10px 0;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.35);
+  }
+  body.xmas .subtitle {
+    font-size: 14px;
+    margin-top: 4px;
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.25);
+  }
+}

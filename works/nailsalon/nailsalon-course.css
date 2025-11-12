@@ -201,3 +201,14 @@ body.nail-theme .back-button.bottom:hover {
     margin-top: 4px;
   }
 }
+
+@media (max-width: 480px) {
+  body.nail-theme h1.nail-title {
+    font-size: clamp(26px, 7vw, 34px);
+    padding: 24px 16px 10px 0;
+  }
+  body.nail-theme .subtitle {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}
