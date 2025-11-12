@@ -1,0 +1,96 @@
+/* 全体背景 */
+body {
+  background-color: #ffeef2; /* 優しいピンク */
+  color: #555;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.9;
+  margin: 0;
+  padding: 0;
+}
+
+/* セクションタイトル（Project Overview / Design Conceptなど） */
+h2 {
+  color: #00bcd4; /* 明るいブルーで統一 */
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+}
+
+/* 説明テキストを包むボックス */
+.text-box {
+  background-color: rgba(255, 255, 255, 0.9); /* 白に近い半透明 */
+  padding: 20px 25px;
+  margin: 0 auto 50px auto;
+  width: 75%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* テキスト本体 */
+p {
+  color: #444; /* 少し濃いめグレーで可読性UP */
+  font-size: 1rem;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.4); /* 柔らかい光の反射感 */
+}
+
+/* ヘッダーのタイトル部分 */
+h1 {
+  text-align: right;
+  margin: 0;
+  padding: 100px 80px 40px 0;
+  color: #00bcd4;
+  text-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+}
+
+/* サブタイトル（日本語の「春の光を、あなたと。」） */
+.subtitle {
+  text-align: right;
+  margin-right: 80px;
+  font-size: 1.2rem;
+  color: #0097a7;
+  text-shadow: 0 0 10px rgba(0, 151, 167, 0.4);
+}
+
+/* 戻るボタン */
+.back-button {
+  display: inline-block;
+  background-color: #ffb6c1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: #ff9bb0;
+  transform: translateY(-2px);
+}
+
+/* Adobe Photoshopアイコンっぽく調整 */
+ul li {
+  list-style-type: "🌸 ";
+  color: #555;
+  margin-left: 40px;
+}
+
+/* 🌸 春の光バナー：画面内にちょうど収まるように */
+.banner {
+  width: 100%;
+  max-width: 100%;
+  height: auto; /* ← 高さを固定せず、画像比率で自動調整 */
+  aspect-ratio: 16 / 9; /* ← 元の画像の比率に合わせる（必要に応じて調整） */
+  background: url('../../images/spring-banner.jpg') center center / contain no-repeat;
+  margin: 0 auto;
+}
+
+/* 📱 スマホ用：縦長画面ではもう少しフィットさせる */
+@media screen and (max-width: 768px) {
+  .banner {
+    aspect-ratio: 3 / 4; /* ← スマホで見やすい比率に変更 */
+    background-position: center top;
+  }
+}
