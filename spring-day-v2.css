@@ -77,26 +77,174 @@ ul li {
   margin-left: 40px;
 }
 
-/* 🌸 春の光バナー - PC・スマホどちらでも画面内に収まるように調整 */
-.banner {
+/* 春の光バナーを完全レスポンシブで表示 */
+.spring-day .detail-image {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.banner img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* 画像全体を切らずに収める */
-  max-height: 80vh; /* 画面の8割以内に制限（調整OK） */
+  max-width: 100%;      /* 横幅に追従する */
+  max-height: none;     /* 高さ制限を解除 */
+  object-fit: scale-down;  /* トリミングなしで全体表示 */
   margin: 0 auto;
+  border-radius: 12px;
 }
 
-/* 📱 スマホ用：よりフィットさせる */
+/* 画面が広いときも中央寄せで安定 */
+.work-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* スマホでも自然に縮む */
+@media (max-width: 768px) {
+  .spring-day .detail-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* =============================
+   🌸 Spring Day override (明るい背景を最優先)
+============================= */
+body.spring-day {
+  background: #ffeef2 !important; /* 優しいピンク */
+  color: #555 !important;
+}
+
+/* コンテンツ内の文字色や背景も上書き */
+.spring-day .text-box {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #444 !important;
+}
+
+.spring-day h2 {
+  color: #00bcd4 !important;
+  text-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+}
+
+.spring-day p {
+  color: #444 !important;
+}
+
+/* 🌸 Spring Day 専用ヘッダー修正 */
+body.spring-day header {
+  display: flex;
+  justify-content: flex-start; /* 左寄せに統一 */
+  align-items: center;
+  gap: 40px; /* ボタンとタイトルの間に余白 */
+  flex-wrap: nowrap; /* 改行しない！ */
+  padding: 18px 60px;
+}
+
+/* Backボタンの幅を少し抑える */
+body.spring-day .back-button {
+  white-space: nowrap; /* 改行禁止 */
+  padding: 12px 40px;
+  font-size: 1rem;
+}
+
+/* 🌸 スマホ用ヘッダー調整（共通） */
 @media screen and (max-width: 768px) {
-  .banner img {
-    max-height: 60vh; /* スマホは縦長なのでさらにコンパクトに */
-    object-fit: contain;
+  header.sub-header {
+    padding: 10px 20px; /* 高さを抑える */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .back-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .warm-title,
+  .spring-title,
+  .nail-title,
+  .calm-title {
+    font-size: 1.4rem; /* タイトルを少し小さく */
+    line-height: 1.3;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 ヘッダーの高さ調整（スマホサイズ） */
+@media screen and (max-width: 768px) {
+  header.sub-header {
+    background-color: rgba(0, 0, 0, 0.6); /* 黒シアーを薄めに */
+    padding: 8px 16px; /* 高さを小さく */
+    min-height: 60px; /* 最低限の高さ */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Backボタン */
+  .back-button {
+    padding: 6px 18px;
+    font-size: 0.85rem;
+  }
+
+  /* タイトルまわり */
+  .warm-title,
+  .spring-title,
+  .nail-title,
+  .calm-title {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.spring-day h1 {
+    font-size: clamp(20px, 6vw, 28px);
+    padding: 12px 8px;
+    text-shadow: 0 0 6px rgba(0, 220, 255, 0.3);
+  }
+
+  body.spring-day .subtitle {
+    font-size: 12px;
+    margin-top: 4px;
+    text-shadow: 0 0 5px rgba(0, 220, 255, 0.25);
+  }
+
+  body.spring-day .back-button {
+    transform: scale(0.8);
+    padding: 8px 12px;
+  }
+}
+
+/* 🌸 Spring Day 専用モバイル調整 */
+@media (max-width: 480px) {
+  body.spring-day h1.glow-title {
+    font-size: clamp(22px, 6vw, 30px);
+    line-height: 1.3;             /* ← これで縦詰まり改善 */
+    padding: 16px 12px 8px;       /* ← 黒シアー高さを抑える */
+    text-align: center;
+    text-shadow: 0 0 6px rgba(0, 220, 255, 0.3);
+  }
+
+  body.spring-day .subtitle {
+    font-size: 13px;
+    margin-top: 4px;
+    text-shadow: 0 0 5px rgba(0, 220, 255, 0.25);
+  }
+
+  body.spring-day header.sub-header {
+    padding: 8px 16px;            /* ← ヘッダー全体をスリムに */
+  }
+
+  body.spring-day .back-button {
+    font-size: 14px;
+    padding: 6px 14px;
   }
 }
