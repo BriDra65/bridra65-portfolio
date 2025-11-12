@@ -130,3 +130,30 @@ body.calm-theme .back-button.bottom:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 10px rgba(120, 210, 180, 0.5);
 }
+
+/* 🌸 スマホ用ヘッダー調整（共通） */
+@media screen and (max-width: 768px) {
+  header.sub-header {
+    padding: 10px 20px; /* 高さを抑える */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .back-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .warm-title,
+  .spring-title,
+  .nail-title,
+  .calm-title {
+    font-size: 1.4rem; /* タイトルを少し小さく */
+    line-height: 1.3;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
