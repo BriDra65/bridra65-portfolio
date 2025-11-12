@@ -582,3 +582,18 @@ h2 {
     object-fit: cover;
   }
 }
+
+/* 🌸 春の光バナー — 画面に収まるように調整 */
+.banner {
+  width: 100%;
+  height: 100vh; /* 画面いっぱいに表示（PC） */
+  background: url('../../images/spring-banner.jpg') center center / cover no-repeat;
+}
+
+/* スマホでは高さを調整してトリミングしすぎないように */
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 70vh;
+    background-position: center top;
+  }
+}
