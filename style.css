@@ -572,3 +572,13 @@ h2 {
     object-fit: cover;
   }
 }
+
+/* 🌸 スマホ画面でバナー画像が画面に収まるように調整 */
+@media screen and (max-width: 768px) {
+  .work-item img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh; /* 画面の60%以内に制限 */
+    object-fit: cover;
+  }
+}
