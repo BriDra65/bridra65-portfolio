@@ -267,3 +267,24 @@ body.newyear-theme .back-button.bottom:hover {
     margin: 0 auto !important;
   }
 }
+
+/* スマホでブラックシアー（黒背景）を小さく */
+@media screen and (max-width: 768px) {
+  .title-area {
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .title-area h1,
+  .title-area h2,
+  .title-area p {
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .back-btn {
+    margin-top: 20px;
+    transform: scale(0.9);
+  }
+}
