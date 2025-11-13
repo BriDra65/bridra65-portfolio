@@ -222,3 +222,61 @@ body.spring-day .back-button {
     padding: 8px 12px;
   }
 }
+
+/* 🌸 Spring Day 専用モバイル調整 */
+@media (max-width: 480px) {
+  body.spring-day h1.glow-title {
+    font-size: clamp(22px, 6vw, 30px);
+    line-height: 1.3;             /* ← これで縦詰まり改善 */
+    padding: 16px 12px 8px;       /* ← 黒シアー高さを抑える */
+    text-align: center;
+    text-shadow: 0 0 6px rgba(0, 220, 255, 0.3);
+  }
+
+  body.spring-day .subtitle {
+    font-size: 13px;
+    margin-top: 4px;
+    text-shadow: 0 0 5px rgba(0, 220, 255, 0.25);
+  }
+
+  body.spring-day header.sub-header {
+    padding: 8px 16px;            /* ← ヘッダー全体をスリムに */
+  }
+
+  body.spring-day .back-button {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+}
+
+/* ===== スマホ調整（〜480px）===== */
+@media (max-width: 480px) {
+  
+  /* 黒シアーを小さく */
+  .sub-header {
+    padding: 40px 16px !important;
+    flex-direction: column;   /* 中身を縦並びにする */
+    align-items: center;      /* 中央揃え */
+    gap: 12px;                /* ボタンとタイトルの間をあける */
+  }
+
+  /* タイトル文字サイズ調整 */
+  .sub-header h1 {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    text-align: center;
+    width: 100%;
+    line-height: 1.3;
+  }
+
+  /* サブタイトル */
+  .sub-header .subtitle {
+    font-size: 14px !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Backボタンを中央に */
+  .back-button {
+    margin: 0 auto !important;
+  }
+}
