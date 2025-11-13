@@ -1,27 +1,113 @@
-/* やさしいグリーン基調 */
-body {
-  background-color: #eefaf2; /* 柔らかいミントグリーン */
+/* =============================
+   🌿 Calm Theme（Shikaku Support）
+   Spring Day と同じ構成に統一版
+   ※色は元のまま
+============================= */
+
+/* 背景（最優先でミント色に固定） */
+body.calm-theme {
+  background: #eefaf2 !important;
   color: #444;
   font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.8;
+}
+
+/* --------------- */
+/*     HEADER      */
+/* --------------- */
+
+body.calm-theme header.sub-header {
+  background: rgba(0, 0, 0, 0.55) !important;
+  backdrop-filter: blur(10px);
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;  /* ← タイトル右寄せ */
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* タイトル */
+body.calm-theme .calm-title {
+  text-align: right;
+  color: #4cb58a;
+  text-shadow: 0 0 12px rgba(76, 181, 138, 0.4);
   margin: 0;
   padding: 0;
 }
 
-/* タイトル */
-h1 {
-  text-align: right;
-  padding: 100px 80px 40px 0;
-  color: #4cb58a; /* メインの落ち着いたグリーン */
-  text-shadow: 0 0 12px rgba(76, 181, 138, 0.4);
-}
-.subtitle {
+body.calm-theme .subtitle {
   font-size: 1.2rem;
   color: #3f8f6e;
   text-shadow: 0 0 10px rgba(63, 143, 110, 0.3);
 }
 
-/* セクションタイトル */
+/* --------------- */
+/*  BACK BUTTON    */
+/* --------------- */
+
+body.calm-theme .back-button {
+  display: inline-block !important;
+  background-color: #aadbbd !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 25px !important;
+  font-weight: bold;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+body.calm-theme .back-button:hover {
+  background-color: #93c9a9 !important;
+  transform: translateY(-2px);
+}
+
+/* フッターの Back ボタン（中央配置） */
+body.calm-theme .back-button.bottom {
+  display: inline-block !important;
+  padding: 14px 60px !important;
+  border-radius: 30px !important;
+  background-color: #80c9aa !important;
+  margin-top: 40px;
+}
+
+body.calm-theme .back-button.bottom:hover {
+  background-color: #64b497 !important;
+  box-shadow: 0 0 10px rgba(120, 210, 180, 0.5);
+}
+
+/* --------------- */
+/*   MAIN IMAGE    */
+/* --------------- */
+
+body.calm-theme .detail-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* --------------- */
+/*   TEXT BOXES    */
+/* --------------- */
+
+.text-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 25px;
+  width: 75%;
+  margin: 0 auto 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
 h2 {
   color: #3fa57a;
   text-align: center;
@@ -30,258 +116,66 @@ h2 {
   text-shadow: 0 0 6px rgba(63, 165, 122, 0.3);
 }
 
-/* テキストボックス */
-.text-box {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px 25px;
-  margin: 0 auto 50px auto;
-  width: 75%;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* テキスト */
-p {
-  font-size: 1rem;
-  color: #333;
-}
-
-/* 戻るボタン */
-.back-button {
-  display: inline-block;
-  background-color: #aadbbd;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  margin: 20px;
-  transition: 0.3s;
-  font-weight: bold;
-}
-.back-button:hover {
-  background-color: #93c9a9;
-  transform: translateY(-2px);
-}
-
-/* 使用ツール */
+/* リスト（Photoshop） */
 ul li {
   list-style-type: "🌿 ";
   margin-left: 40px;
   color: #555;
 }
 
-/* =============================
-🎓 Shikaku Support Campaign 統一デザイン調整
-============================= */
+/* --------------- */
+/*     FOOTER      */
+/* --------------- */
 
-/* ① バナー画像 */
-body.calm-theme .detail-image,
-body.calm-theme main img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-
-/* ② 黒シアーヘッダー（共通仕様） */
-body.calm-theme header {
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  z-index: 1000;
-  padding: 18px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* ③ フッター中央ボタン */
 body.calm-theme footer {
+  background-color: #e8f6f2 !important;
   text-align: center;
-  background-color: #e8f6f2; /* ミント寄りの淡グリーン */
   padding: 60px 0 30px;
-  border-top: none;
-  box-shadow: none;
 }
 
-body.calm-theme .back-button.bottom {
-  display: inline-block;
-  text-align: center;
-  padding: 14px 60px;
-  font-size: 1.1rem;
-  background-color: #80c9aa; /* 明るいミントグリーン */
-  color: white;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-  border: none;
-  margin-top: 40px;
-}
+/* --------------- */
+/*   RESPONSIVE    */
+/* --------------- */
 
-body.calm-theme .back-button.bottom:hover {
-  background-color: #64b497;
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(120, 210, 180, 0.5);
-}
-
-/* 🌸 スマホ用ヘッダー調整（共通） */
-@media screen and (max-width: 768px) {
+/* タブレット以下 */
+@media (max-width: 768px) {
   header.sub-header {
-    padding: 10px 20px; /* 高さを抑える */
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    padding: 10px 20px !important;
   }
-
-  .back-button {
-    padding: 8px 20px;
-    font-size: 0.9rem;
+  body.calm-theme .back-button {
+    padding: 8px 20px !important;
   }
-
-  .warm-title,
-  .spring-title,
-  .nail-title,
-  .calm-title {
-    font-size: 1.4rem; /* タイトルを少し小さく */
-    line-height: 1.3;
-  }
-
-  .subtitle {
-    font-size: 0.9rem;
-  }
-}
-
-/* 📱 ヘッダーの高さ調整（スマホサイズ） */
-@media screen and (max-width: 768px) {
-  header.sub-header {
-    background-color: rgba(0, 0, 0, 0.6); /* 黒シアーを薄めに */
-    padding: 8px 16px; /* 高さを小さく */
-    min-height: 60px; /* 最低限の高さ */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  /* Backボタン */
-  .back-button {
-    padding: 6px 18px;
-    font-size: 0.85rem;
-  }
-
-  /* タイトルまわり */
-  .warm-title,
-  .spring-title,
-  .nail-title,
-  .calm-title {
-    font-size: 1.3rem;
-    line-height: 1.2;
-  }
-
-  .subtitle {
-    font-size: 0.85rem;
-    margin-top: 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  body.calm-theme h1.calm-title {
-    font-size: clamp(26px, 7vw, 34px);
-    padding: 24px 16px 10px 0;
-  }
-  body.calm-theme .subtitle {
-    font-size: 14px;
-    margin-top: 4px;
-  }
-}
-
-/* ===== スマホ調整（〜480px）===== */
-@media (max-width: 480px) {
-  
-  /* 黒シアーを小さく */
-  .sub-header {
-    padding: 40px 16px !important;
-    flex-direction: column;   /* 中身を縦並びにする */
-    align-items: center;      /* 中央揃え */
-    gap: 12px;                /* ボタンとタイトルの間をあける */
-  }
-
-  /* タイトル文字サイズ調整 */
-  .sub-header h1 {
-    font-size: clamp(24px, 6vw, 32px) !important;
-    text-align: center;
-    width: 100%;
-    line-height: 1.3;
-  }
-
-  /* サブタイトル */
-  .sub-header .subtitle {
-    font-size: 14px !important;
-    text-align: center;
-    width: 100%;
-  }
-
-  /* Backボタンを中央に */
-  .back-button {
-    margin: 0 auto !important;
-  }
-}
-
-/* ===== スマホ調整（〜480px）===== */
-@media (max-width: 480px) {
-  
-  /* 黒シアーを小さく */
-  .sub-header {
-    padding: 40px 16px !important;
-    flex-direction: column;   /* 中身を縦並びにする */
-    align-items: center;      /* 中央揃え */
-    gap: 12px;                /* ボタンとタイトルの間をあける */
-  }
-
-  /* タイトル文字サイズ調整 */
-  .sub-header h1 {
-    font-size: clamp(24px, 6vw, 32px) !important;
-    text-align: center;
-    width: 100%;
-    line-height: 1.3;
-  }
-
-  /* サブタイトル */
-  .sub-header .subtitle {
-    font-size: 14px !important;
-    text-align: center;
-    width: 100%;
-  }
-
-  /* Backボタンを中央に */
-  .back-button {
-    margin: 0 auto !important;
-  }
-}
-
-/* スマホでブラックシアー（黒背景）を小さく */
-@media screen and (max-width: 768px) {
-  .title-area {
-    padding: 40px 20px;
-    height: auto;
-  }
-
-  .title-area h1,
-  .title-area h2,
-  .title-area p {
-    text-align: left;
+  body.calm-theme .calm-title {
     font-size: 1.4rem;
-    line-height: 1.4;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* スマホ：縦並び構成（Springと同じ） */
+@media (max-width: 480px) {
+
+  header.sub-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 16px !important;
   }
 
-  .back-btn {
-    margin-top: 20px;
-    transform: scale(0.9);
+  body.calm-theme .calm-title {
+    text-align: center !important;
+    font-size: clamp(24px, 7vw, 32px) !important;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 14px !important;
+    width: 100%;
+  }
+
+  /* Back ボタン中央寄せ */
+  .back-button {
+    margin: 0 auto !important;
   }
 }

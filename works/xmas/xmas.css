@@ -1,325 +1,109 @@
-/* あたたかい赤系の背景 */
-body {
-  background-color: #fff5f5; /* 柔らかいピンクレッド */
-  color: #443;
+/* =============================
+   🎄 Base Style（全体共通）
+============================= */
+body.xmas {
+  background-color: #ffeeee; /* 明るいピンク */
+  color: #5a1a1a;
   font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.8;
+  line-height: 1.9;
   margin: 0;
   padding: 0;
 }
 
-/* タイトル */
-h1 {
-  text-align: right;
-  padding: 100px 80px 40px 0;
-  color: #b43b3b; /* 深めのボルドーレッド */
-  text-shadow: 0 0 15px rgba(180, 59, 59, 0.5);
+/* 見出し */
+body.xmas h1,
+body.xmas h2 {
+  color: #b22222; /* 深いボルドー */
+  text-shadow: 0 0 10px rgba(255, 200, 200, 0.6);
 }
 
-.subtitle {
+/* サブタイトル */
+body.xmas .subtitle {
   font-size: 1.2rem;
   color: #a02c2c;
   text-shadow: 0 0 8px rgba(255, 190, 150, 0.6);
 }
 
-/* セクションタイトル */
-h2 {
-  color: #c0392b;
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(255, 200, 150, 0.4);
-}
-
 /* テキストボックス */
-.text-box {
+body.xmas .text-box {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 20px 25px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 50px;
   width: 75%;
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(120, 40, 40, 0.1);
 }
 
-/* 本文 */
-p {
-  font-size: 1rem;
-  color: #333;
+body.xmas p {
+  color: #5a1a1a;
 }
 
-/* 戻るボタン */
-.back-button {
-  display: inline-block;
-  background-color: #e26a6a;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  margin: 20px;
-  transition: 0.3s;
-  font-weight: bold;
-}
-.back-button:hover {
-  background-color: #d94f4f;
-  transform: translateY(-2px);
-}
-
-/* 使用ツール */
-ul li {
+/* 🎄 リストアイコン */
+body.xmas ul li {
   list-style-type: "🎄 ";
   margin-left: 40px;
-  color: #555;
 }
 
-/* セクションの背景にコントラストをつける */
-section:nth-of-type(odd) {
-  background-color: #ffe0e0; /* ほんのり濃いピンク */
-  padding: 60px 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(255, 180, 180, 0.3); /* やわらか光 */
+/* =============================
+   🎄 Header（黒シアー + スマホ最適化）
+============================= */
+
+header.sub-header {
+  background: rgba(0, 0, 0, 0.45); /* 黒シアー */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 22px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-section:nth-of-type(even) {
-  background-color: #fff5f5; /* 明るめで軽やか */
-  padding: 60px 0;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(255, 200, 200, 0.25);
+/* 戻るボタン（上） */
+header.sub-header .back-button {
+  display: inline-block;
+  background-color: #ffb6c1;
+  color: white;
+  padding: 10px 26px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* タイトルにゴールドっぽい光の余韻 */
-h2 {
-  color: #b22222; /* 深いボルドー */
-  text-align: center;
-  text-shadow: 0 0 10px rgba(255, 215, 150, 0.5); /* ゴールドの光 */
+header.sub-header .back-button:hover {
+  background-color: #ff9bb0;
+  transform: translateY(-2px);
 }
 
-/* バナー画像をふんわり浮かせる */
-.banner img {
-  display: block;
-  margin: 0 auto 50px auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(200, 0, 0, 0.2); /* ふんわり立体感 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.banner img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(200, 0, 0, 0.3);
-}
-
-/* 🎄 クリスマスバナーを画面幅に合わせて縮小表示 */
+/* =============================
+   🎄 Banner Image（レスポンシブ）
+============================= */
 body.xmas .detail-image {
   display: block;
-  width: 100%;        /* 横幅に合わせる */
-  height: auto;       /* 高さは自動調整 */
-  max-width: 100%;    /* 横に伸びすぎ防止 */
-  max-height: 80vh;   /* 画面高さの8割までに制限 */
-  object-fit: contain;/* 切らずに全体表示 */
-  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
   border-radius: 12px;
+  margin: 20px auto 40px;
 }
 
 /* =============================
-   🎄 Xmasページ専用の色上書き
+   🎄 Footer（Spring と完全統一）
 ============================= */
-body.xmas h1,
-body.xmas h2 {
-  color: #b22222 !important; /* 深いボルドーレッド */
-  text-shadow: 0 0 10px rgba(255, 200, 200, 0.6) !important;
-}
-
-body.xmas .back-button {
-  background-color: #ffb6c1 !important;
-  color: white !important;
-}
-
-body.xmas .back-button:hover {
-  background-color: #ff9bb0 !important;
-  box-shadow: 0 0 10px rgba(255, 155, 176, 0.5) !important;
-}
-
-/* =============================
-   🎄 Xmasページ専用テーマカラー上書き
-============================= */
-body.xmas {
-  background-color: #ffeeee; /* 優しいピンク背景 */
-  color: #5a1a1a; /* 温かみのある赤茶文字 */
-}
-
-/* 見出し（タイトル・セクション） */
-body.xmas h1,
-body.xmas h2 {
-  color: #b22222 !important; /* 深めのボルドーレッド */
-  text-shadow: 0 0 8px rgba(255, 200, 200, 0.6) !important;
-}
-
-/* 説明文などの小さい文字 */
-body.xmas p,
-body.xmas .text-box {
-  color: rgba(90, 26, 26, 0.9) !important; /* 読みやすい濃い赤茶 */
-}
-
-/* フッター */
-body.xmas footer {
-  background-color: #ffeeee; /* ページ全体と統一 */
-  text-align: center;
-  padding: 50px 0 30px;
-}
-
-/* フッターのテキスト */
-body.xmas footer p {
-  color: #5a1a1a !important;
-  font-weight: 500;
-}
-
-/* 🎁 フッター中央のBackボタン */
-body.xmas .back-button.bottom {
-  display: inline-block;
-  text-align: center;
-  padding: 14px 60px;
-  font-size: 1.1rem;
-  background-color: #ffb6c1;
-  color: white;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-  border: none;
-}
-
-body.xmas .back-button.bottom:hover {
-  background-color: #ff9bb0;
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(255, 155, 176, 0.6);
-}
-
-/* =============================
-   🎄 Xmasページ 背景色の調整（黒を削除）
-============================= */
-
-/* ページ全体の背景を明るいピンクに統一 */
-body.xmas {
-  background-color: #ffeeee !important;
-  color: #5a1a1a;
-}
-
-/* フッターも同じ背景色に */
-body.xmas footer {
-  background-color: #ffeeee !important;
-}
-
-/* 背景が黒く残っているヘッダーの透明部分を調整 */
-body.xmas header {
-  background: rgba(0, 0, 0, 0.4); /* 少し暗めの透けだけ残す */
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* メイン背景に黒が引きずられてる場合の保険 */
-body.xmas main {
-  background-color: transparent !important;
-}
-
-body.warm-theme header {
-  background: rgba(0, 0, 0, 0.4) !important;
-  backdrop-filter: blur(10px) !important;
-}
-
-/* =============================
-   🎄 Xmasページ 背景・レイヤー調整
-============================= */
-
-/* ページ全体をピンクに戻す */
-body.xmas {
-  background-color: #ffeeee !important;
-  color: #5a1a1a;
-}
-
-/* 🌟 ヘッダー（黒シアーは上だけ） */
-body.xmas header {
-  background: rgba(0, 0, 0, 0.45); /* 黒シアー少しだけ */
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* main と footer は完全にピンク背景 */
-body.xmas main,
-body.xmas footer {
-  background-color: #ffeeee !important;
-}
-
-/* main内の余白を調整してヘッダーとかぶらないように */
-body.xmas main {
-  padding-top: 40px;
-}
-
-/* フッターの中央ボタン */
-body.xmas .back-button.bottom {
-  display: inline-block;
-  text-align: center;
-  padding: 14px 60px;
-  font-size: 1.1rem;
-  background-color: #ffb6c1;
-  color: white;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-  border: none;
-  margin-top: 40px;
-}
-
-body.xmas .back-button.bottom:hover {
-  background-color: #ff9bb0;
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(255, 155, 176, 0.6);
-}
-
-/* =============================
-   🎄 Xmasページ 背景・レイヤー完全修正版
-============================= */
-
-/* ページ全体：明るいピンクに統一 */
-body.xmas {
-  background-color: #ffeeee !important;
-  color: #5a1a1a;
-  position: relative;
-  z-index: 0;
-}
-
-/* 🌟 ヘッダー：黒シアー（上だけ） */
-body.xmas header {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* 🎁 メイン：ピンク背景を維持して黒が被らないように */
-body.xmas main {
-  background-color: #ffeeee;
-  padding-top: 40px;
-  position: relative;
-  z-index: 1;
-}
-
-/* 💖 フッター：上のピンクと完全に一体化させる */
 body.xmas footer {
   background-color: #ffeeee;
   text-align: center;
   padding: 60px 0 30px;
-  position: relative;
-  z-index: 1;
-  box-shadow: none !important;
-  border: none !important;
+  border: none;
 }
 
-/* 🎀 フッター中央ボタン（Springと同じ見た目） */
+/* フッター中央ボタン */
 body.xmas .back-button.bottom {
   display: inline-block;
   text-align: center;
@@ -332,7 +116,7 @@ body.xmas .back-button.bottom {
   text-decoration: none;
   transition: 0.3s;
   border: none;
-  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 body.xmas .back-button.bottom:hover {
@@ -342,171 +126,65 @@ body.xmas .back-button.bottom:hover {
 }
 
 /* =============================
-   🎄 Xmasページ 最終修正版：背景を完全に統一
+   📱 スマホ最適化（768px以下）
 ============================= */
+@media (max-width: 768px) {
 
-/* html全体もピンクで統一して、黒背景を消す */
-html.xmas,
-body.xmas {
-  background-color: #ffeeee !important;
-  color: #5a1a1a;
-  position: relative;
-  z-index: 0;
-}
-
-/* 🌟 ヘッダー（黒シアー上だけ） */
-body.xmas header {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* メインとフッターもピンク背景で統一 */
-body.xmas main,
-body.xmas footer {
-  background-color: #ffeeee !important;
-  position: relative;
-  z-index: 1;
-}
-
-/* mainの余白 */
-body.xmas main {
-  padding-top: 40px;
-}
-
-/* フッター */
-body.xmas footer {
-  text-align: center;
-  padding: 60px 0 30px;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* 🎀 フッター中央ボタン */
-body.xmas .back-button.bottom {
-  display: inline-block;
-  text-align: center;
-  padding: 14px 60px;
-  font-size: 1.1rem;
-  background-color: #ffb6c1;
-  color: white;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-  border: none;
-  margin-top: 40px;
-}
-
-body.xmas .back-button.bottom:hover {
-  background-color: #ff9bb0;
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(255, 155, 176, 0.6);
-}
-
-/* =============================
- 🎄 Xmasページ：背景完全上書き版
-============================= */
-
-html[class*="xmas"],
-body[class*="xmas"] {
-  background: #ffeeee !important;
-  background-color: #ffeeee !important;
-  color: #5a1a1a !important;
-  position: relative !important;
-  z-index: 0 !important;
-}
-
-/* ヘッダーの黒シアー調整 */
-body.xmas header {
-  background: rgba(0, 0, 0, 0.45) !important;
-  backdrop-filter: blur(10px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 1000 !important;
-}
-
-/* メイン・フッターともピンク背景に固定 */
-body.xmas main,
-body.xmas footer {
-  background: #ffeeee !important;
-  background-color: #ffeeee !important;
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-/* 🌸 スマホ用ヘッダー調整（共通） */
-@media screen and (max-width: 768px) {
+  /* ヘッダーもっと小さく（Spring と完全一致） */
   header.sub-header {
-    padding: 10px 20px; /* 高さを抑える */
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    padding: 16px 20px !important;
+    flex-direction: column; /* 縦並び */
+    gap: 10px;
   }
 
-  .back-button {
+  header.sub-header .back-button {
     padding: 8px 20px;
     font-size: 0.9rem;
+    margin: 0 auto;
   }
 
-  .warm-title,
-  .spring-title,
-  .nail-title,
-  .calm-title {
-    font-size: 1.4rem; /* タイトルを少し小さく */
+  header.sub-header .warm-title {
+    font-size: clamp(22px, 6vw, 30px);
+    text-align: center;
     line-height: 1.3;
+    margin: 0;
   }
 
-  .subtitle {
-    font-size: 0.9rem;
-  }
-}
-
-/* 📱 ヘッダーの高さ調整（スマホサイズ） */
-@media screen and (max-width: 768px) {
-  header.sub-header {
-    background-color: rgba(0, 0, 0, 0.6); /* 黒シアーを薄めに */
-    padding: 8px 16px; /* 高さを小さく */
-    min-height: 60px; /* 最低限の高さ */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  /* Backボタン */
-  .back-button {
-    padding: 6px 18px;
-    font-size: 0.85rem;
-  }
-
-  /* タイトルまわり */
-  .warm-title,
-  .spring-title,
-  .nail-title,
-  .calm-title {
-    font-size: 1.3rem;
-    line-height: 1.2;
-  }
-
-  .subtitle {
-    font-size: 0.85rem;
-    margin-top: 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  body.xmas h1.warm-title {
-    font-size: clamp(26px, 7vw, 34px);
-    padding: 24px 16px 10px 0;
-    text-shadow: 0 0 8px rgba(255, 0, 0, 0.35);
-  }
-  body.xmas .subtitle {
+  header.sub-header .subtitle {
     font-size: 14px;
-    margin-top: 4px;
-    text-shadow: 0 0 6px rgba(255, 0, 0, 0.25);
   }
+
+  /* 画像の余白 */
+  body.xmas .detail-image {
+    margin-top: 10px;
+  }
+}
+
+/* =============================
+   📱 さらに小さいスマホ（480px以下）
+============================= */
+@media (max-width: 480px) {
+
+  header.sub-header {
+    padding: 14px 14px !important;
+    gap: 8px;
+  }
+
+  header.sub-header .back-button {
+    padding: 6px 16px !important;
+    font-size: 0.85rem !important;
+  }
+
+  header.sub-header .warm-title {
+    font-size: clamp(20px, 7vw, 26px) !important;
+  }
+
+  body.xmas .detail-image {
+    border-radius: 10px;
+  }
+}
+
+/* 🎄 Xmas 背景を最優先で適用（最強） */
+body.xmas {
+  background: #ffeeee !important;   /* ← これが最強。背景を完全に上書き */
 }

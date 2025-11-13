@@ -1,94 +1,63 @@
-/* 背景：淡いピンクベージュ */
-body {
-  background: linear-gradient(180deg, #fff9f9 0%, #ffeef1 100%);
+/* =========================================
+   🎀 NailSalon：背景色固定（黒背景を完全消す）
+========================================= */
+body.nail-theme {
+  background: #fff1f4 !important;  /* 淡いピンクベージュ */
   color: #555;
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.9;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 0;
 }
 
-/* タイトル */
-h1 {
+/* htmlも黒背景の影響を受けないように */
+html.nail-theme {
+  background: #fff1f4 !important;
+}
+
+/* =========================================
+   🎀 ヘッダー（黒シアー） - 共通構成
+========================================= */
+body.nail-theme header.sub-header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 18px 60px;
+  display: flex;
+  justify-content: flex-start; /* ← ボタン左 / タイトル右 */
+  align-items: center;
+  z-index: 1000;
+}
+
+/* タイトルを右寄せ（Spring / Xmas / NewYear と統一） */
+body.nail-theme .nail-title {
+  margin-left: auto;
   text-align: right;
-  padding: 100px 80px 40px 0;
-  color: #e89cae; /* 落ち着いたローズピンク */
+  color: #e89cae;
   text-shadow: 0 0 12px rgba(232, 156, 174, 0.4);
 }
 
-.subtitle {
-  font-size: 1.2rem;
+body.nail-theme .subtitle {
   color: #d37d92;
   text-shadow: 0 0 10px rgba(255, 200, 210, 0.4);
 }
 
-/* セクションタイトル */
-h2 {
-  color: #d87c95;
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  text-shadow: 0 0 8px rgba(232, 156, 174, 0.3);
+/* =========================================
+   🎀 メイン（黒の影響を完全排除）
+========================================= */
+body.nail-theme main {
+  background: #fff1f4 !important;
+  padding-top: 40px;
+  position: relative;
+  z-index: 1;
 }
 
-/* テキストボックス */
-.text-box {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px 25px;
-  margin: 0 auto 50px auto;
-  width: 75%;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(230, 170, 180, 0.15);
-}
-
-/* 本文 */
-p {
-  font-size: 1rem;
-  color: #444;
-}
-
-/* 戻るボタン */
-.back-button {
-  display: inline-block;
-  background: linear-gradient(90deg, #e89cae, #f4c6d1);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  margin: 20px;
-  transition: 0.3s;
-  font-weight: bold;
-  box-shadow: 0 0 8px rgba(240, 190, 200, 0.4);
-}
-.back-button:hover {
-  background: linear-gradient(90deg, #f4c6d1, #e89cae);
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(240, 190, 200, 0.6);
-}
-
-/* 使用ツールリスト */
-ul li {
-  list-style-type: "💅 ";
-  margin-left: 40px;
-  color: #555;
-}
-
-.detail-image {
-  display: block;
-  margin: 40px auto; /* 上下に余白＋左右中央寄せ */
-  width: 80%; /* 画像サイズを調整（お好みで70〜90%くらい） */
-  max-width: 800px; /* 大きくなりすぎないよう制限 */
-  border-radius: 10px; /* 柔らかい印象をプラス */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ふんわり影 */
-}
-
-/* =============================
-💅 Nail Salon Course ページ統一デザイン調整
-============================= */
-
-/* ① バナー画像を横幅に合わせて調整 */
-body.nail-theme .detail-image,
-body.nail-theme main img {
+/* =========================================
+   🎀 バナー画像（共通化）
+========================================= */
+body.nail-theme .detail-image {
   display: block;
   width: 100%;
   height: auto;
@@ -97,29 +66,46 @@ body.nail-theme main img {
   object-fit: contain;
   margin: 0 auto;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* ② 黒シアーヘッダー（統一版） */
-body.nail-theme header {
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  z-index: 1000;
-  padding: 18px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* =========================================
+   🎀 テキストボックス
+========================================= */
+.text-box {
+  background: rgba(255, 255, 255, 0.95);
+  width: 75%;
+  margin: 0 auto 50px;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(230, 170, 180, 0.15);
 }
 
-/* ③ フッター中央ボタン */
-body.nail-theme footer {
+h2 {
   text-align: center;
-  background-color: #fff5f7; /* 淡いピンク調 */
+  color: #d87c95;
+  margin: 60px 0 30px;
+  text-shadow: 0 0 8px rgba(232, 156, 174, 0.3);
+}
+
+/* =========================================
+   🎀 リスト（ネイル絵文字）
+========================================= */
+ul li {
+  list-style-type: "💅 ";
+  margin-left: 40px;
+  color: #555;
+}
+
+/* =========================================
+   🎀 フッター（共通デザイン化）
+========================================= */
+body.nail-theme footer {
+  background: #fff1f4 !important;
+  text-align: center;
   padding: 60px 0 30px;
-  border-top: none;
-  box-shadow: none;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 body.nail-theme .back-button.bottom {
@@ -127,13 +113,12 @@ body.nail-theme .back-button.bottom {
   text-align: center;
   padding: 14px 60px;
   font-size: 1.1rem;
-  background-color: #ffb6c1; /* ローズピンク */
+  background-color: #ffb6c1;
   color: white;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
-  border: none;
   margin-top: 40px;
 }
 
@@ -143,13 +128,12 @@ body.nail-theme .back-button.bottom:hover {
   box-shadow: 0 0 10px rgba(255, 170, 190, 0.5);
 }
 
-/* 🌸 スマホ用ヘッダー調整（共通） */
+/* =========================================
+   🎀 スマホ調整（〜768px）
+========================================= */
 @media screen and (max-width: 768px) {
   header.sub-header {
-    padding: 10px 20px; /* 高さを抑える */
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    padding: 10px 20px !important;
   }
 
   .back-button {
@@ -157,11 +141,8 @@ body.nail-theme .back-button.bottom:hover {
     font-size: 0.9rem;
   }
 
-  .warm-title,
-  .spring-title,
-  .nail-title,
-  .calm-title {
-    font-size: 1.4rem; /* タイトルを少し小さく */
+  .nail-title {
+    font-size: 1.4rem;
     line-height: 1.3;
   }
 
@@ -170,130 +151,57 @@ body.nail-theme .back-button.bottom:hover {
   }
 }
 
-/* 📱 ヘッダーの高さ調整（スマホサイズ） */
-@media screen and (max-width: 768px) {
-  header.sub-header {
-    background-color: rgba(0, 0, 0, 0.6); /* 黒シアーを薄めに */
-    padding: 8px 16px; /* 高さを小さく */
-    min-height: 60px; /* 最低限の高さ */
-    display: flex;
+/* =========================================
+   🎀 スマホ最適化（〜480px）
+========================================= */
+@media (max-width: 480px) {
+  .sub-header {
+    padding: 40px 16px !important;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 12px;
   }
 
-  /* Backボタン */
-  .back-button {
-    padding: 6px 18px;
-    font-size: 0.85rem;
-  }
-
-  /* タイトルまわり */
-  .warm-title,
-  .spring-title,
-  .nail-title,
-  .calm-title {
-    font-size: 1.3rem;
-    line-height: 1.2;
+  .nail-title {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    text-align: center;
+    margin-left: 0 !important;
   }
 
   .subtitle {
-    font-size: 0.85rem;
-    margin-top: 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  body.nail-theme h1.nail-title {
-    font-size: clamp(26px, 7vw, 34px);
-    padding: 24px 16px 10px 0;
-  }
-  body.nail-theme .subtitle {
-    font-size: 14px;
-    margin-top: 4px;
-  }
-}
-
-/* ===== スマホ調整（〜480px）===== */
-@media (max-width: 480px) {
-  
-  /* 黒シアーを小さく */
-  .sub-header {
-    padding: 40px 16px !important;
-    flex-direction: column;   /* 中身を縦並びにする */
-    align-items: center;      /* 中央揃え */
-    gap: 12px;                /* ボタンとタイトルの間をあける */
-  }
-
-  /* タイトル文字サイズ調整 */
-  .sub-header h1 {
-    font-size: clamp(24px, 6vw, 32px) !important;
-    text-align: center;
-    width: 100%;
-    line-height: 1.3;
-  }
-
-  /* サブタイトル */
-  .sub-header .subtitle {
     font-size: 14px !important;
     text-align: center;
-    width: 100%;
   }
 
-  /* Backボタンを中央に */
   .back-button {
     margin: 0 auto !important;
   }
 }
 
-/* ===== スマホ調整（〜480px）===== */
-@media (max-width: 480px) {
-  
-  /* 黒シアーを小さく */
-  .sub-header {
-    padding: 40px 16px !important;
-    flex-direction: column;   /* 中身を縦並びにする */
-    align-items: center;      /* 中央揃え */
-    gap: 12px;                /* ボタンとタイトルの間をあける */
-  }
-
-  /* タイトル文字サイズ調整 */
-  .sub-header h1 {
-    font-size: clamp(24px, 6vw, 32px) !important;
-    text-align: center;
-    width: 100%;
-    line-height: 1.3;
-  }
-
-  /* サブタイトル */
-  .sub-header .subtitle {
-    font-size: 14px !important;
-    text-align: center;
-    width: 100%;
-  }
-
-  /* Backボタンを中央に */
-  .back-button {
-    margin: 0 auto !important;
-  }
+/* Nail サロンだけバナー画像を少し小さく */
+body.nail-theme .detail-image {
+  width: 80% !important;      /* ← PCでは80%で見やすいサイズに */
+  max-width: 900px;           /* ← 大きくなりすぎ防止 */
+  margin: 20px auto 40px;     /* ← 上にも余白 */
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
 }
 
-/* スマホでブラックシアー（黒背景）を小さく */
-@media screen and (max-width: 768px) {
-  .title-area {
-    padding: 40px 20px;
-    height: auto;
-  }
+/* Back ボタンが文字だけになる問題の修正（最優先適用） */
+body.nail-theme .back-button {
+  display: inline-block !important;
+  background: #e89cae !important;      /* ← ピンク系（元の色） */
+  color: #fff !important;
+  padding: 10px 20px !important;
+  border-radius: 25px !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+  box-shadow: 0 0 8px rgba(240, 190, 200, 0.4) !important;
+}
 
-  .title-area h1,
-  .title-area h2,
-  .title-area p {
-    text-align: left;
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-
-  .back-btn {
-    margin-top: 20px;
-    transform: scale(0.9);
-  }
+/* Nail サロンのヘッダー内の Back ボタンが崩れる問題を修正 */
+body.nail-theme header.sub-header .back-button {
+  flex-shrink: 0 !important;  /* ← 潰れない */
+  margin: 0 !important;
 }
