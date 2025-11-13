@@ -248,3 +248,196 @@ body.spring-day .back-button {
     padding: 6px 14px;
   }
 }
+
+/* ===== スマホ調整（〜480px）===== */
+@media (max-width: 480px) {
+  
+  /* 黒シアーを小さく */
+  .sub-header {
+    padding: 40px 16px !important;
+    flex-direction: column;   /* 中身を縦並びにする */
+    align-items: center;      /* 中央揃え */
+    gap: 12px;                /* ボタンとタイトルの間をあける */
+  }
+
+  /* タイトル文字サイズ調整 */
+  .sub-header h1 {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    text-align: center;
+    width: 100%;
+    line-height: 1.3;
+  }
+
+  /* サブタイトル */
+  .sub-header .subtitle {
+    font-size: 14px !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Backボタンを中央に */
+  .back-button {
+    margin: 0 auto !important;
+  }
+}
+
+/* ===== スマホ調整（〜480px）===== */
+@media (max-width: 480px) {
+  
+  /* 黒シアーを小さく */
+  .sub-header {
+    padding: 40px 16px !important;
+    flex-direction: column;   /* 中身を縦並びにする */
+    align-items: center;      /* 中央揃え */
+    gap: 12px;                /* ボタンとタイトルの間をあける */
+  }
+
+  /* タイトル文字サイズ調整 */
+  .sub-header h1 {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    text-align: center;
+    width: 100%;
+    line-height: 1.3;
+  }
+
+  /* サブタイトル */
+  .sub-header .subtitle {
+    font-size: 14px !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Backボタンを中央に */
+  .back-button {
+    margin: 0 auto !important;
+  }
+}
+
+/* スマホでブラックシアー（黒背景）を小さく */
+@media screen and (max-width: 768px) {
+  .title-area {
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .title-area h1,
+  .title-area h2,
+  .title-area p {
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .back-btn {
+    margin-top: 20px;
+    transform: scale(0.9);
+  }
+}
+
+/* ============================
+   📱 Spring Day スマホ最適化
+   HTML構造に100%合わせた修正版
+===============================*/
+@media (max-width: 768px) {
+
+  /* 黒シアー背景（header）を薄く＆コンパクトに */
+  header.sub-header {
+    background-color: rgba(0,0,0,0.55) !important;
+    padding: 20px 16px !important; /* ← ここで高さを縮める */
+    display: flex;
+    flex-direction: column; /* ← 中身を縦並び */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* ボタンとタイトルの隙間 */
+  }
+
+  /* Backボタンを小さめに中央へ */
+  header.sub-header .back-button {
+    padding: 8px 20px !important;
+    font-size: 0.9rem !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+
+  /* タイトル（1つのH1の中に日本語も入ってる） */
+  header.sub-header .glow-title {
+    font-size: clamp(20px, 6vw, 28px) !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* さらにスマホ小サイズ（〜480px）調整 */
+@media (max-width: 480px) {
+
+  header.sub-header {
+    padding: 16px 12px !important; /* ← さらにコンパクト */
+    gap: 8px;
+  }
+
+  header.sub-header .back-button {
+    padding: 6px 16px !important;
+    font-size: 0.85rem !important;
+  }
+
+  header.sub-header .glow-title {
+    font-size: clamp(18px, 7vw, 24px) !important;
+    line-height: 1.3 !important;
+  }
+}
+/* ============================
+   📱 Spring Day スマホ最適化
+   HTML構造に100%合わせた修正版
+===============================*/
+@media (max-width: 768px) {
+
+  /* 黒シアー背景（header）を薄く＆コンパクトに */
+  header.sub-header {
+    background-color: rgba(0,0,0,0.55) !important;
+    padding: 20px 16px !important; /* ← ここで高さを縮める */
+    display: flex;
+    flex-direction: column; /* ← 中身を縦並び */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* ボタンとタイトルの隙間 */
+  }
+
+  /* Backボタンを小さめに中央へ */
+  header.sub-header .back-button {
+    padding: 8px 20px !important;
+    font-size: 0.9rem !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+
+  /* タイトル（1つのH1の中に日本語も入ってる） */
+  header.sub-header .glow-title {
+    font-size: clamp(20px, 6vw, 28px) !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* さらにスマホ小サイズ（〜480px）調整 */
+@media (max-width: 480px) {
+
+  header.sub-header {
+    padding: 16px 12px !important; /* ← さらにコンパクト */
+    gap: 8px;
+  }
+
+  header.sub-header .back-button {
+    padding: 6px 16px !important;
+    font-size: 0.85rem !important;
+  }
+
+  header.sub-header .glow-title {
+    font-size: clamp(18px, 7vw, 24px) !important;
+    line-height: 1.3 !important;
+  }
+}
+
