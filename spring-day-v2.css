@@ -137,3 +137,14 @@ header.sub-header .glow-title {
     font-size: clamp(18px, 7vw, 24px);
   }
 }
+
+body.spring-day {
+  background: #ffeef2 !important;  /* ← background にするのが最強 */
+}
+
+ul li {
+  list-style-type: "🌸 ";
+  list-style-position: inside;
+  margin-left: 20px; /* 調整は自由！ */
+  color: #555;
+}
