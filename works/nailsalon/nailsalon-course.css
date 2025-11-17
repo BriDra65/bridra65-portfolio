@@ -245,3 +245,76 @@ header.sub-header h1 {
     text-align: center;
   }
 }
+
+/* ================================
+   💅 Nail：Backボタン調整
+================================ */
+
+body.nail-theme .back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 46px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #e89cae, #f4c6d1);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 4px 12px rgba(240, 190, 200, 0.55);
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+}
+
+body.nail-theme .back-button:hover {
+  background: linear-gradient(90deg, #f4c6d1, #e89cae);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(240, 190, 200, 0.8);
+}
+
+/* 下のボタン位置だけ中央寄せ */
+body.nail-theme .back-button.bottom {
+  margin: 40px auto 0;
+}
+
+/* ================================
+   🎍🎀🎓 3ページ共通：ヘッダー配置
+   NewYear / Nail / Shikaku
+================================ */
+
+/* PC（769px〜）：左ボタン・右タイトルに横並び ＝ Xmas と同じ構成 */
+@media (min-width: 769px) {
+  body.newyear-theme header.sub-header,
+  body.nail-theme   header.sub-header,
+  body.calm-theme   header.sub-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  body.newyear-theme h1.newyear-title,
+  body.nail-theme   h1.nail-title,
+  body.calm-theme   h1.calm-title {
+    margin: 0;
+    text-align: right;
+  }
+}
+
+/* スマホ（〜768px）：今まで通り、縦並び＋中央揃え */
+@media (max-width: 768px) {
+  body.newyear-theme header.sub-header,
+  body.nail-theme   header.sub-header,
+  body.calm-theme   header.sub-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  body.newyear-theme h1.newyear-title,
+  body.nail-theme   h1.nail-title,
+  body.calm-theme   h1.calm-title {
+    text-align: center;
+  }
+}

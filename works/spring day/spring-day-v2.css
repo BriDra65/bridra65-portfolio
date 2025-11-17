@@ -188,3 +188,37 @@ header.sub-header h1 {
     text-align: center;
   }
 }
+
+/* ================================
+   🌸 Spring Day：Backボタン調整
+================================ */
+
+/* 上下共通：ピンクの pill ボタン */
+body.spring-day .back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 46px;
+  border-radius: 999px;
+  background-color: #ffb6c1;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 155, 176, 0.55);
+  transition: background-color 0.25s ease,
+              transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+/* ホバー時のふわっと浮くアクション */
+body.spring-day .back-button:hover {
+  background-color: #ff9bb0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 155, 176, 0.75);
+}
+
+/* 下のBackボタンだけ中央寄せ */
+body.spring-day .back-button.bottom {
+  margin: 40px auto 0;
+}

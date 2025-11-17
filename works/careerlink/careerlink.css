@@ -219,3 +219,53 @@ header.sub-header h1 {
     text-align: center;
   }
 }
+
+/* calm-theme のブラックシアー（春と同じ高さに） */
+body.calm-theme header.sub-header {
+  padding: 14px 20px !important; /* spring と同じくらいに調整 */
+  min-height: 70px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ================================
+   🎍🎀🎓 3ページ共通：ヘッダー配置
+   NewYear / Nail / Shikaku
+================================ */
+
+/* PC（769px〜）：左ボタン・右タイトルに横並び ＝ Xmas と同じ構成 */
+@media (min-width: 769px) {
+  body.newyear-theme header.sub-header,
+  body.nail-theme   header.sub-header,
+  body.calm-theme   header.sub-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  body.newyear-theme h1.newyear-title,
+  body.nail-theme   h1.nail-title,
+  body.calm-theme   h1.calm-title {
+    margin: 0;
+    text-align: right;
+  }
+}
+
+/* スマホ（〜768px）：今まで通り、縦並び＋中央揃え */
+@media (max-width: 768px) {
+  body.newyear-theme header.sub-header,
+  body.nail-theme   header.sub-header,
+  body.calm-theme   header.sub-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  body.newyear-theme h1.newyear-title,
+  body.nail-theme   h1.nail-title,
+  body.calm-theme   h1.calm-title {
+    text-align: center;
+  }
+}

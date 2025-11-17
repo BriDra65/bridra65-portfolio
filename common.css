@@ -1,0 +1,139 @@
+/* =====================================
+   個別ページ共通デザイン（構造のみ）
+   ※ 色・影・フォントはテーマCSSで変更
+===================================== */
+
+/* -------------------------------
+   🌙 Base Layout
+-------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* -------------------------------
+   🖤 Black Sheer Header（共通）
+-------------------------------- */
+header.sub-header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+header.sub-header h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+header.sub-header .subtitle {
+  font-size: 1rem;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Backボタン（共通構造） */
+.back-button {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 26px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+/* -------------------------------
+   🖼️ バナー画像
+-------------------------------- */
+.detail-image {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 30px auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* -------------------------------
+   📄 コンテンツ領域
+-------------------------------- */
+.work-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.work-info h2 {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-size: 1.6rem;
+}
+
+/* 白統一のテキストボックス */
+.text-box {
+  background: #fff;
+  padding: 24px 28px;
+  margin: 0 auto 50px;
+  width: 80%;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
+.text-box p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* -------------------------------
+   🦶 フッター（中央ボタン）
+-------------------------------- */
+footer {
+  text-align: center;
+  padding: 60px 0 30px;
+}
+
+.back-button.bottom {
+  padding: 14px 60px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+/* -------------------------------
+   📱 Responsive
+-------------------------------- */
+@media (max-width: 480px) {
+
+  header.sub-header {
+    padding: 26px 16px;
+  }
+
+  header.sub-header h1 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  header.sub-header .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .text-box {
+    width: 92%;
+    padding: 20px;
+  }
+}
