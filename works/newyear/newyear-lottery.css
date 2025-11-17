@@ -209,3 +209,43 @@ body.newyear-theme .newyear-title {
   margin-left: auto;   /* ← これが右寄せの決定打！ */
   text-align: right;   /* ← テキスト自体も右揃え */
 }
+
+/* ★ ブラックシアーヘッダー：Spring Day 仕様に統一 ★ */
+header.sub-header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+
+  /* ←これがめちゃ重要（タイトルの余白）*/
+  padding: 60px 60px 40px 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* タイトルは header 内で位置調整、余白は削除する */
+header.sub-header h1 {
+  margin: 0;
+  padding: 0; /* ←これで黒シアーの続きが綺麗になる */
+  text-align: right;
+  width: 100%;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+  header.sub-header {
+    padding: 30px 20px 20px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  header.sub-header h1 {
+    text-align: center;
+  }
+}
